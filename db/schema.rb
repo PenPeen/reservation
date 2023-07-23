@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_23_135554) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_23_140216) do
   create_table "identities", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "reservation_admin_roles", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "identity_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["identity_id"], name: "index_reservation_admin_roles_on_identity_id"
+  end
+
+  add_foreign_key "reservation_admin_roles", "identities"
 end
