@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_23_140531) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_24_123857) do
   create_table "identities", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -31,6 +31,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_23_140531) do
     t.index ["identity_id"], name: "index_reservation_general_roles_on_identity_id"
   end
 
+  create_table "reservations", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "identity_id", null: false
+    t.bigint "resource_id", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["identity_id"], name: "index_reservations_on_identity_id"
+    t.index ["resource_id"], name: "index_reservations_on_resource_id"
+  end
+
+  create_table "resources", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name", limit: 50
+    t.string "note", limit: 1024
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "reservation_admin_roles", "identities"
   add_foreign_key "reservation_general_roles", "identities"
+  add_foreign_key "reservations", "identities"
+  add_foreign_key "reservations", "resources"
 end
