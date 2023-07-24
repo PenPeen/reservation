@@ -4,6 +4,6 @@ class Identity < ApplicationRecord
   has_one :reservation_admin_role, dependent: :destroy
   has_one :reservation_general_role, dependent: :destroy
 
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
   has_many :resources, through: :reservations
 end

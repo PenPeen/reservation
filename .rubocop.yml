@@ -15,3 +15,5 @@ Style/StringLiterals:
   Enabled: false
 Bundler/OrderedGems:
   Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
