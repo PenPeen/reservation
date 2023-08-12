@@ -9,6 +9,10 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+# Indexes
+#
+#  index_identities_on_email  (email) UNIQUE
+#
 class Identity < ApplicationRecord
   has_secure_password
 
@@ -17,4 +21,6 @@ class Identity < ApplicationRecord
 
   has_many :reservations, dependent: :destroy
   has_many :resources, through: :reservations
+
+  validates :email, uniqueness: true
 end
