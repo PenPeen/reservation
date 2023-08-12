@@ -19,22 +19,23 @@ class SessionsController < ApplicationController
   end
 
   private
-    def authenticate_user(email, password)
-      identity = Identity.find_by(email: email)
-      return identity if identity&.authenticate(password)
 
-      nil
-    end
+  def authenticate_user(email, password)
+    identity = Identity.find_by(email:)
+    return identity if identity&.authenticate(password)
 
-    def assign_session_and_redirect(identity)
-      if identity.reservation_admin_role
-        session[:reservation_admin] = identity.id
-        redirect_to admin_path
-      elsif identity.reservation_general_role
-        session[:reservation_general] = identity.id
-        redirect_to general_path
-      else
-        redirect_to login_path, alert: 'このIDにはロールが割り当てられていません。'
-      end
+    nil
+  end
+
+  def assign_session_and_redirect(identity)
+    if identity.reservation_admin_role
+      session[:reservation_admin] = identity.id
+      redirect_to admin_path
+    elsif identity.reservation_general_role
+      session[:reservation_general] = identity.id
+      redirect_to general_path
+    else
+      redirect_to login_path, alert: 'このIDにはロールが割り当てられていません。'
     end
+  end
 end
