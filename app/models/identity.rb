@@ -17,4 +17,6 @@ class Identity < ApplicationRecord
 
   has_many :reservations, dependent: :destroy
   has_many :resources, through: :reservations
+
+  validates :email, uniqueness: true
 end
