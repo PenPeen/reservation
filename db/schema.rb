@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_24_123857) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_12_015241) do
   create_table "identities", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", limit: 50
     t.string "email", limit: 256
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_identities_on_email", unique: true
   end
 
   create_table "reservation_admin_roles", charset: "utf8mb4", force: :cascade do |t|
