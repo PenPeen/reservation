@@ -23,8 +23,6 @@ class SessionsController < ApplicationController
   def authenticate_user(email, password)
     identity = Identity.find_by(email:)
     return identity if identity&.authenticate(password)
-
-    nil
   end
 
   def assign_session_and_redirect(identity)
