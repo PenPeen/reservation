@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:reservation_admin)
     session.delete(:reservation_general)
-    redirect_to login_path
+    # OPTIMIZED: turboの影響でFlashが正しく表示できていないので、修正する
+    redirect_to login_path, notice: 'ログアウトしました。'
   end
 
   private
