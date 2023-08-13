@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <%= stylesheet_link_tag 'admin', media: 'all' %>
+</head>
+<body>
+  <%= render 'layouts/side_menu' %>
+  <div class="content">
+    <%= yield %>
+  </div>
+</body>
+</html>

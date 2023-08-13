@@ -28,10 +28,10 @@ class SessionsController < ApplicationController
   def assign_session_and_redirect(identity)
     if identity.reservation_admin_role
       session[:reservation_admin] = identity.id
-      redirect_to admin_path
+      redirect_to admin_root_path
     elsif identity.reservation_general_role
       session[:reservation_general] = identity.id
-      redirect_to general_path
+      redirect_to general_root_path
     else
       redirect_to login_path, alert: 'このIDにはロールが割り当てられていません。'
     end
