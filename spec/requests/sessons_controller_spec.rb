@@ -15,7 +15,7 @@ RSpec.describe SessionsController, type: :request do
 
         it 'assigns a session and redirects to admin path' do
           login(identity)
-          expect(response).to redirect_to(admin_path)
+          expect(response).to redirect_to(admin_root_path)
         end
       end
 
@@ -24,7 +24,7 @@ RSpec.describe SessionsController, type: :request do
 
         it 'assigns a session and redirects to general path' do
           login(identity)
-          expect(response).to redirect_to(general_path)
+          expect(response).to redirect_to(general_root_path)
         end
       end
 

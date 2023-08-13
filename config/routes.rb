@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     root to: 'dashboards#index'
   end
 
-  # OPTIMIZED: general機能実装時
-  get '/general', to: 'generals#index'
+  namespace :general do
+    root to: 'generals#index'
+  end
 end
