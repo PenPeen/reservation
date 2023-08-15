@@ -5,6 +5,7 @@ module Admin
         Identity.includes(:reservation_admin_role, :reservation_general_role)
                 .where.not(reservation_admin_role: { id: nil })
                 .or(Identity.where.not(reservation_general_role: { id: nil }))
+                .order(:created_at)
     end
   end
 end
