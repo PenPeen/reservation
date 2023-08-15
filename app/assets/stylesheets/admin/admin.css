@@ -1,0 +1,55 @@
+.side-menu {
+  width: 250px;
+  background-color: #3a5068;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: auto;
+  color: #f5f5f5;
+}
+
+.content {
+  display: flex;
+  margin-left: 250px;
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 50px;
+}
+
+.menu-header {
+  background-color: #2a3f55;
+  padding: 20px;
+  text-align: center;
+}
+
+.menu-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.side-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  padding: 15px;
+  margin-left: 10px;
+  text-align: left;
+  border-bottom: 1px solid #4a6075;
+}
+
+.side-menu li:hover {
+  background-color: #4a6075;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: bold;
+}

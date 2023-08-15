@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% flash.each do |message_type, message| %>
+      <div class="flash-<%= message_type %>">
+        <%= image_tag "#{message_type}.svg", alt: "#{message_type} icon", class: "flash-icon" %>
+        <span><%= message %></span>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

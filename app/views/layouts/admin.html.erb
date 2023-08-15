@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'admin/application', media: 'all' %>
+  <%= javascript_importmap_tags %>
+</head>
+<body>
+  <%= render 'layouts/side_menu' %>
+  <div class="content">
+    <%= yield %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+/* Users管理画面専用のスタイル */
+.users-management {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  flex-grow: 1;
+  padding: 0 50px 50px 50px;
+}
+
+.users-management h1 {
+  color: #333;
+  text-align: center;
+}
+
+.users-management table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.users-management th,
+.users-management td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.users-management th {
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.users-management tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.users-management td {
+  text-align: center;
+}
