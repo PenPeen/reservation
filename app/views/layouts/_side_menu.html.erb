@@ -1,11 +1,12 @@
 <nav class="side-menu">
   <div class="menu-header">
-    <h1>Admin Panel</h1>
+    <h1>
+      <%= link_to 'Admin Panel', admin_root_path %>
+    </h1>
   </div>
   <ul>
-    <li><%= link_to 'Dashboard', admin_root_path %></li>
-    <li><%= link_to 'Users', admin_root_path %></li>
     <li><%= link_to 'Resources', admin_root_path %></li>
+    <li><%= link_to 'Users', admin_users_path %></li>
     <li><%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete } %></li>
   </ul>
 </nav>

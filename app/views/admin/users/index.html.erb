@@ -1,0 +1,29 @@
+<div class="users-management">
+  <h1>ユーザー管理</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <%# human_attributes %>
+        <th><%= Identity.human_attribute_name(:name) %></th>
+        <th><%= Identity.human_attribute_name(:email) %></th>
+        <th><%= Identity.human_attribute_name(:reservation_admin_role) %></th>
+        <th><%= Identity.human_attribute_name(:reservation_general_role) %></th>
+        <th><%= Identity.human_attribute_name(:created_at) %></th>
+        <th><%= Identity.human_attribute_name(:updated_at) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @identities.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.reservation_admin_role ? '●' : '' %></td>
+          <td><%= user.reservation_general_role ? '●' : '' %></td>
+          <td><%= l(user.created_at, format: :date_only) %></td>
+          <td><%= l(user.updated_at, format: :date_only) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
